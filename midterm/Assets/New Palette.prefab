@@ -192,6 +192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2792631235638766795}
   - component: {fileID: 8119674554044416591}
+  - component: {fileID: 8995690389400453128}
   m_Layer: 0
   m_Name: New Palette
   m_TagString: Untagged
@@ -227,6 +228,19 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &8995690389400453128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5099302684797865761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd93865840b9ef042b0b8c07b738d2ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1.19
 --- !u!114 &4083611130091165649
 MonoBehaviour:
   m_ObjectHideFlags: 0

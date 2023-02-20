@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
     private Vector3 moveDelta;
     private RaycastHit2D hit;
     private BoxCollider2D boxCollider;
-
+    public int count = 0; 
 
     // Start is called before the first frame update
     void Start()
@@ -41,4 +41,33 @@ public class Movement : MonoBehaviour
             transform.Translate(moveDelta.x * Time.deltaTime, 0, 0);
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("cop")) {
+                count++;
+                if (count > 3)
+                {
+                    Debug.Log("Exceeded 3 hits. You lose");
+                    Destroy(gameObject);
+                    
+                    Vector3 pointA;
+                    Vector3 pointB;
+
+                     pointA = new Vector3(-6, 6, 0);
+                     pointB = new Vector3(1, 6, 0);
+
+    //PingPong between 0 and 0
+                    float time = Mathf.PingPong(Time.time * 0f, 1);
+                    transform.position = Vector3.Lerp(pointA, pointB, time);
+                }
+                        Debug.Log("hit # " + count);
+                transform.position = new Vector3(0, 0, 0);
+
+                
+
+                        //_rigidbody2D.isKinematic = true;
+                        //Destroy(gameObject);
+                    }
+        }
 }

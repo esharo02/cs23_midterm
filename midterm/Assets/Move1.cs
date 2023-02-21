@@ -20,6 +20,14 @@ public class Move1 : MonoBehaviour
         transform.position = Vector3.Lerp(pointA, pointB, time);
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player")) {
+                    // Destroy(gameObject); /* remove picked up item */
+                    Debug.Log("hello?");
+                }
+    }
+
     // void OnTriggerEnter2D(Collider2D other)
     //     {
     //         if (other.CompareTag("Player")) {

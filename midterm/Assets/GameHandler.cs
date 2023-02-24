@@ -1,18 +1,25 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class GameHandler : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public class GameHandler : MonoBehaviour {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+      public GameObject scoreText;
+      private int totalAmount = 0;
+      private int timer = 0;
+
+      void Start(){
+            UpdateScore();
+      }
+
+      public void AddScore(int points){
+            totalAmount += points;
+            UpdateScore();
+      }
+
+      void UpdateScore(){
+            Text scoreTextB = scoreText.GetComponent<Text>();
+            scoreTextB.text = "" + totalAmount;
+      }
 }

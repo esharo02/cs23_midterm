@@ -7,12 +7,17 @@ public class Movement : MonoBehaviour
     private Vector3 moveDelta;
     private RaycastHit2D hit;
     private BoxCollider2D boxCollider;
-    public int count = 0; 
+    public int count = 0;
+    public GameHandler gameHandlerObj;
 
     // Start is called before the first frame update
     void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
+        if (GameObject.FindWithTag("GameHandler") != null)
+        {
+            gameHandlerObj = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
+        }
     }
 
     // Update is called once per frame
@@ -46,10 +51,9 @@ public class Movement : MonoBehaviour
         {
             if (other.CompareTag("cop")) {
                 count++;
-                if (count > 3)
+                gameHandlerObj.AddScore(1);
                 {
                     Debug.Log("Exceeded 3 hits. You lose");
-                    Destroy(gameObject);
                     
                     Vector3 pointA;
                     Vector3 pointB;

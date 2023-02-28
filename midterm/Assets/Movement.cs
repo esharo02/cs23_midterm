@@ -53,6 +53,7 @@ public class Movement : MonoBehaviour
             if (other.CompareTag("cop")) {
                 count++;
                 gameHandlerObj.RemoveScore(1);
+                gameHandlerObj.ReduceTime(5);
                 {
                     Debug.Log("Exceeded 3 hits. You lose");
                     

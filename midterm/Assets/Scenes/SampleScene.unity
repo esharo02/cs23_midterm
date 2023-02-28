@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 206180437}
   - component: {fileID: 206180436}
   m_Layer: 5
-  m_Name: Timer
+  m_Name: timerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,7 +285,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '* Timer *'
+  m_Text: 
 --- !u!222 &206180437
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5845,9 +5845,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7721891030231677124, guid: 4a283c5e486544a7ca9051746cb20681, type: 3}
+      propertyPath: timeLeft
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7721891030231677124, guid: 4a283c5e486544a7ca9051746cb20681, type: 3}
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 1050161678}
+    - target: {fileID: 7721891030231677124, guid: 4a283c5e486544a7ca9051746cb20681, type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 206180434}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a283c5e486544a7ca9051746cb20681, type: 3}
 --- !u!1001 &9194726456051851817

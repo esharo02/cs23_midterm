@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
     private BoxCollider2D boxCollider;
     public int count = 0;
     public GameHandler gameHandlerObj;
+    private int collidedItemVal;
 
     // Start is called before the first frame update
     void Start()
@@ -51,27 +52,28 @@ public class Movement : MonoBehaviour
         {
             if (other.CompareTag("cop")) {
                 count++;
-                gameHandlerObj.AddScore(1);
+                gameHandlerObj.RemoveScore(1);
                 {
                     Debug.Log("Exceeded 3 hits. You lose");
                     
                     Vector3 pointA;
                     Vector3 pointB;
 
-                     pointA = new Vector3(-6, 6, 0);
-                     pointB = new Vector3(1, 6, 0);
+                    pointA = new Vector3(-6, 6, 0);
+                    pointB = new Vector3(1, 6, 0);
 
-    //PingPong between 0 and 0
+                    //PingPong between 0 and 0
                     float time = Mathf.PingPong(Time.time * 0f, 1);
                     transform.position = Vector3.Lerp(pointA, pointB, time);
                 }
-                        Debug.Log("hit # " + count);
+                Debug.Log("hit # " + count);
                 transform.position = new Vector3(0, 0, 0);
-
-                
-
-                        //_rigidbody2D.isKinematic = true;
-                        //Destroy(gameObject);
-                    }
+                //_rigidbody2D.isKinematic = true;
+                //Destroy(gameObject);
+            } else if (other.CompareTag("artifact")) {
+                /* get the value of the item collected */
+                collidedItemVal = other.gameObject.GetComponent<Artifact>().value;
+                gameHandlerObj.AddScore(collidedItemVal);
+            }
         }
 }

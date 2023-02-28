@@ -3,7 +3,7 @@ using System.Collections;
  
 public class Move1 : MonoBehaviour
 {
-    public float speed = 1.19f;
+    public float speed = 0.85f;
     Vector3 pointA;
     Vector3 pointB;
     public GameHandler gameHandlerObj;

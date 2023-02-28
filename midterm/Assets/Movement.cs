@@ -24,6 +24,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(gameHandlerObj.timeLeft > 0) {
         float x = Input.GetAxisRaw("Horizontal") * 3;
         float y = Input.GetAxisRaw("Vertical") * 3;
         moveDelta = new Vector3(x, y, 0);
@@ -45,6 +46,7 @@ public class Movement : MonoBehaviour
         if (hit.collider == null)
         {
             transform.Translate(moveDelta.x * Time.deltaTime, 0, 0);
+        }
         }
     }
 

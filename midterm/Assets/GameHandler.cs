@@ -10,7 +10,9 @@ public class GameHandler : MonoBehaviour {
       public float timeLeft = 60;
       public bool timerOn = false;
       public GameObject timerText;
-      public Text gameOverText;
+      public Image gameOver;
+
+      public GameObject GameOverTxt;
 
       private int earnings = 0;
 
@@ -44,7 +46,8 @@ public class GameHandler : MonoBehaviour {
                   Debug.Log("Time is up!");
                   timeLeft = 0;
                   timerOn = false;
-                  gameOverText.gameObject.SetActive(true);
+                  gameOver.gameObject.SetActive(true);
+                  GameOverTxt.gameObject.SetActive(true);
             }
             } 
       }

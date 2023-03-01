@@ -75,7 +75,7 @@ public class Robber : MonoBehaviour
             gameHandlerObj.RemoveScore(1);
             gameHandlerObj.ReduceTime(5);
             {
-                Debug.Log("Exceeded 3 hits. You lose");
+                //Debug.Log("Exceeded 3 hits. You lose");
 
                 Vector3 pointA;
                 Vector3 pointB;

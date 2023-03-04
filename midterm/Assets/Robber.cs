@@ -9,6 +9,7 @@ public class Robber : MonoBehaviour
     private BoxCollider2D boxCollider;
     public int count = 0;
     public GameHandler gameHandlerObj;
+    private int collidedItemVal;
     private Animator anim;
     private Renderer rend;
 
@@ -74,6 +75,8 @@ public class Robber : MonoBehaviour
             gameHandlerObj.RemoveScore(1);
             gameHandlerObj.ReduceTime(5);
             {
+                //Debug.Log("Exceeded 3 hits. You lose");
+
                 Vector3 pointA;
                 Vector3 pointB;
 
@@ -89,9 +92,11 @@ public class Robber : MonoBehaviour
             //_rigidbody2D.isKinematic = true;
             //Destroy(gameObject);
         }
-        // else if (other.CompareTag("artifact"))
-        // {
-
-        
+        else if (other.CompareTag("artifact"))
+        {
+            /* get the value of the item collected */
+            collidedItemVal = other.gameObject.GetComponent<Artifact>().value;
+            gameHandlerObj.AddScore(collidedItemVal);
+        }
     }
 }

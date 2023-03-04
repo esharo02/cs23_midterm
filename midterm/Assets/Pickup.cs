@@ -6,17 +6,10 @@ public class Pickup : MonoBehaviour
 {
     private Inventory inventory;
     public GameObject itemButton;
-    public GameHandler gameHandlerObj;
-    private int collidedItemVal;
-
 
     private void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-        if (GameObject.FindWithTag("GameHandler") != null)
-        {
-            gameHandlerObj = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
-        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -29,10 +22,6 @@ public class Pickup : MonoBehaviour
                     /* button goes to same place as slot */
                     Instantiate(itemButton, inventory.slots[i].transform, false);
                     Destroy(gameObject); /* remove picked up item */
-                                /* get the value of the item collected */
-                    collidedItemVal = gameObject.GetComponent<Artifact>().value;
-                Debug.Log("collided: " + collidedItemVal);
-                gameHandlerObj.AddScore(collidedItemVal);
                     break;
                 }
             }

@@ -92,11 +92,5 @@ public class Robber : MonoBehaviour
             //_rigidbody2D.isKinematic = true;
             //Destroy(gameObject);
         }
-        else if (other.CompareTag("artifact"))
-        {
-            /* get the value of the item collected */
-            collidedItemVal = other.gameObject.GetComponent<Artifact>().value;
-            gameHandlerObj.AddScore(collidedItemVal);
-        }
     }
 }

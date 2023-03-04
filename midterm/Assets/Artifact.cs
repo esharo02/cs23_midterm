@@ -9,21 +9,21 @@ public class Artifact : MonoBehaviour
 
     void Start()
     {
-        artifactName = name.Substring(0, 4);
+        artifactName = name.Substring(0, 3);
 
         switch (artifactName)
         {
-            case "Item1":
-                value = 1;
+            case "Art1":
+                value = 20;
                 break;
-            case "Item2":
-                value = 2;
+            case "Art2":
+                value = 10;
                 break;
-            case "Item3":
+            case "Art3":
                 value = 3;
                 break;
-            case "Item4":
-                value = 4;
+            case "Art4":
+                value = 200;
                 break;
         }
         

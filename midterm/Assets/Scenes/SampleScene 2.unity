@@ -3972,7 +3972,7 @@ BoxCollider2D:
   m_Offset: {x: 0.074221075, y: -0.001429379}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.4923635, y: 0.4923637}
+    pivot: {x: 0.41218022, y: 0.49236357}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -14967,10 +14967,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Guard2
       objectReference: {fileID: 0}
-    - target: {fileID: 116303060401401738, guid: 9330443c6d5b0497e8b90937c42fdbbd, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 116303060401401729, guid: 9330443c6d5b0497e8b90937c42fdbbd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9330443c6d5b0497e8b90937c42fdbbd, type: 3}
@@ -15148,11 +15144,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8408725020187180039, guid: b86c18356213f44f4b99e66a8eb43e10, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 8408725020187180039, guid: b86c18356213f44f4b99e66a8eb43e10, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 8408725020187180039, guid: b86c18356213f44f4b99e66a8eb43e10, type: 3}
       propertyPath: m_LocalScale.z

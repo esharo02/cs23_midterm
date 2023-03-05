@@ -92,13 +92,25 @@ public class Move1 : MonoBehaviour
             transform.Translate(moveDelta.y * Time.deltaTime, 0, 0);
 
         }
-             transform.position = Vector3.Lerp(transform.position, desiredPos, Time.deltaTime * speed);
-             if (Vector3.Distance(transform.position, desiredPos) <= 0.01f)
-             {
+        hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(moveDelta.y, 0), Mathf.Abs(moveDelta.y * Time.deltaTime), LayerMask.GetMask("Actor", "Blocking"));
+        if (hit.collider == null)
+        {
             anim.SetBool("walk", true);
-            yPos = Random.Range(-4.5f, 4.5f);
-                 desiredPos = new Vector3( transform.position.x ,yPos, transform.position.z);
-            //  timer = 0.0f;
+            transform.position = Vector3.Lerp(transform.position, desiredPos, Time.deltaTime * speed);
+
+        }
+
+        
+            if (Vector3.Distance(transform.position, desiredPos) <= 0.01f)
+            {
+                anim.SetBool("walk", true);
+                yPos = Random.Range(-4.5f, 4.5f);
+                hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(0, moveDelta.y), Mathf.Abs(moveDelta.y * Time.deltaTime), LayerMask.GetMask("Actor", "Blocking"));
+                if (hit.collider == null)
+                {
+                    desiredPos = new Vector3(transform.position.x, yPos, transform.position.z);
+                    //  timer = 0.0f;
+                }
             }
         //anim.SetBool("walk", false);
 

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameHandler : MonoBehaviour {
 
@@ -64,4 +65,33 @@ public class GameHandler : MonoBehaviour {
       public void ReduceTime(int deductTime) {
             timeLeft -= deductTime;
       }
+
+      public void StartGame() {
+            SceneManager.LoadScene("Level1");
+      }
+
+      public void RestartGame() {
+            SceneManager.LoadScene("MainMenu");
+            //reset all static variables
+            //playerHealth = StartPlayerHealth;
+      }
+
+      public void QuitGame() {
+                #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+                #else
+                Application.Quit();
+                #endif
+      }
+
+      public void Credits() {
+            SceneManager.LoadScene("Credits");
+      }
+
+
+
+
+
+
+
 }

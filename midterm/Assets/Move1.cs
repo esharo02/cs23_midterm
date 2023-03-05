@@ -68,8 +68,10 @@ public class Move1 : MonoBehaviour
          yPos = Random.Range(-4.5f, 4.5f);
          desiredPos = new Vector3(transform.position.x, yPos, transform.position.z);
              boxCollider = GetComponent<BoxCollider2D>();
+        anim = GetComponentInChildren<Animator>();
+        rend = GetComponentInChildren<Renderer>();
 
-     }
+    }
  
      void Update()
      {
@@ -78,21 +80,28 @@ public class Move1 : MonoBehaviour
             hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(0, moveDelta.x), Mathf.Abs(moveDelta.x * Time.deltaTime), LayerMask.GetMask("Actor", "Blocking"));
             if (hit.collider == null)
             {
-                transform.Translate(0, moveDelta.x * Time.deltaTime, 0);
-            }
+            anim.SetBool("walk", true);
+            transform.Translate(0, moveDelta.x * Time.deltaTime, 0);
+            
+        }
 
             hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(moveDelta.y, 0), Mathf.Abs(moveDelta.y * Time.deltaTime), LayerMask.GetMask("Actor", "Blocking"));
             if (hit.collider == null)
             {
-                transform.Translate(moveDelta.y * Time.deltaTime, 0, 0);
-            }
+            anim.SetBool("walk", true);
+            transform.Translate(moveDelta.y * Time.deltaTime, 0, 0);
+
+        }
              transform.position = Vector3.Lerp(transform.position, desiredPos, Time.deltaTime * speed);
              if (Vector3.Distance(transform.position, desiredPos) <= 0.01f)
              {
-                 yPos = Random.Range(-4.5f, 4.5f);
+            anim.SetBool("walk", true);
+            yPos = Random.Range(-4.5f, 4.5f);
                  desiredPos = new Vector3( transform.position.x ,yPos, transform.position.z);
-                //  timer = 0.0f;
-             }
+            //  timer = 0.0f;
+            }
+                anim.SetBool("walk", false);
+         
          
      }
  }

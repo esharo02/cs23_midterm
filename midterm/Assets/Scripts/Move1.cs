@@ -70,7 +70,7 @@ public class Move1 : MonoBehaviour
              boxCollider = GetComponent<BoxCollider2D>();
         anim = GetComponentInChildren<Animator>();
         rend = GetComponentInChildren<Renderer>();
-
+        anim.SetBool("walk", true);
     }
  
      void Update()
@@ -100,10 +100,10 @@ public class Move1 : MonoBehaviour
                  desiredPos = new Vector3( transform.position.x ,yPos, transform.position.z);
             //  timer = 0.0f;
             }
-                anim.SetBool("walk", false);
-         
-         
-     }
+        //anim.SetBool("walk", false);
+
+
+    }
  }
 // public float speed = 0.85f;
 

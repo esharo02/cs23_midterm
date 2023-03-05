@@ -87,10 +87,32 @@ public class Robber : MonoBehaviour
                 float time = Mathf.PingPong(Time.time * 0f, 1);
                 transform.position = Vector3.Lerp(pointA, pointB, time);
             }
-            Debug.Log("hit # " + count);
+            Debug.Log("GUARD hit --total " + count);
             transform.position = new Vector3(0, 0, 0);
             //_rigidbody2D.isKinematic = true;
             //Destroy(gameObject);
         }
+    //    laser_flash theLAZER = GameObject.Find("laserbeam").GetComponent<laserbeam>();
+        if (other.CompareTag("laserbeam"))
+        {
+            count++;
+            gameHandlerObj.RemoveScore(1);
+            gameHandlerObj.ReduceTime(5);
+            
+                Vector3 pointA;
+                Vector3 pointB;
+
+                pointA = new Vector3(-6, 6, 0);
+                pointB = new Vector3(1, 6, 0);
+
+                //PingPong between 0 and 0
+                float time = Mathf.PingPong(Time.time * 0f, 1);
+                transform.position = Vector3.Lerp(pointA, pointB, time);
+            
+            Debug.Log("LAZER hit --total " + count);
+            transform.position = new Vector3(0, 0, 0);
+        }
+
     }
+    
 }

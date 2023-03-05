@@ -7,6 +7,7 @@ TagManager:
   - cop
   - GameHandler
   - artifact
+  - laserbeam
   layers:
   - Default
   - TransparentFX

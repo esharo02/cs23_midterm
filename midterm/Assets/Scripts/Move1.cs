@@ -80,7 +80,7 @@ public class Move1 : MonoBehaviour
             hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(0, moveDelta.x), Mathf.Abs(moveDelta.x * Time.deltaTime), LayerMask.GetMask("Actor", "Blocking"));
             if (hit.collider == null)
             {
-            anim.SetBool("walk", true);
+            //anim.SetBool("walk", true); //art not updated
             transform.Translate(0, moveDelta.x * Time.deltaTime, 0);
             
         }
@@ -88,19 +88,19 @@ public class Move1 : MonoBehaviour
             hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(moveDelta.y, 0), Mathf.Abs(moveDelta.y * Time.deltaTime), LayerMask.GetMask("Actor", "Blocking"));
             if (hit.collider == null)
             {
-            anim.SetBool("walk", true);
+           // anim.SetBool("walk", true);
             transform.Translate(moveDelta.y * Time.deltaTime, 0, 0);
 
         }
              transform.position = Vector3.Lerp(transform.position, desiredPos, Time.deltaTime * speed);
              if (Vector3.Distance(transform.position, desiredPos) <= 0.01f)
              {
-            anim.SetBool("walk", true);
+           // anim.SetBool("walk", true);
             yPos = Random.Range(-4.5f, 4.5f);
                  desiredPos = new Vector3( transform.position.x ,yPos, transform.position.z);
             //  timer = 0.0f;
             }
-                anim.SetBool("walk", false);
+                //anim.SetBool("walk", false);
          
          
      }

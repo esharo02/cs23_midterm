@@ -14,12 +14,16 @@ public class GameHandler : MonoBehaviour {
       public Image gameOver;
 
       public GameObject GameOverTxt;
+      public GameObject SubtractTime;
+    private Vector3 fromScale;
 
-      private int earnings = 0;
+    private int earnings = 0;
 
       void Start(){
             timerOn = true;
             UpdateScore();
+            fromScale = SubtractTime.transform.localScale;
+            SubtractTime.gameObject.SetActive(false);
       }
 
       public void AddScore(int points){
@@ -35,9 +39,27 @@ public class GameHandler : MonoBehaviour {
       void UpdateScore(){
             Text scoreTextB = scoreText.GetComponent<Text>();
             scoreTextB.text = "Earnings: $" + earnings + " Million";
-      }
+        //Text subtractTimeTxt = scoreText.GetComponent<Text>();
+            SubtractTime.gameObject.SetActive(true);
+        StartCoroutine(ScaleDownAnimation(1.0f));
+    }
 
-      void Update() 
+    IEnumerator ScaleDownAnimation(float time)
+    {
+        float i = 0;
+        float rate = 1 / time;
+
+        
+        Vector3 toScale = Vector3.zero;
+        while (i < 1)
+        {
+            i += Time.deltaTime * rate;
+            SubtractTime.transform.localScale = Vector3.Lerp(fromScale, toScale, i);
+            yield return 0;
+        }
+    }
+
+    void Update() 
       {
             if(timerOn) {
                   if(timeLeft > 0) {
@@ -48,6 +70,7 @@ public class GameHandler : MonoBehaviour {
                   timeLeft = 0;
                   timerOn = false;
                   gameOver.gameObject.SetActive(true);
+                  Text sudbtractTimeTxt = scoreText.GetComponent<Text>();
                   GameOverTxt.gameObject.SetActive(true);
             }
             } 

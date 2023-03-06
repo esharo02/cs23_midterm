@@ -19,6 +19,7 @@ public class Robber : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         rend = GetComponentInChildren<Renderer>();
         boxCollider = GetComponent<BoxCollider2D>();
+        
         if (GameObject.FindWithTag("GameHandler") != null)
         {
             gameHandlerObj = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();

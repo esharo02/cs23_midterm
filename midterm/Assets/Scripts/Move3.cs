@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Move2 : MonoBehaviour
+public class Move3 : MonoBehaviour
 
 
 {
@@ -21,7 +21,7 @@ public class Move2 : MonoBehaviour
     Vector3 pointA;
     Vector3 pointB;
     public Vector3 desiredTranform;
-    float move = 0.06f;
+    float move = 0.01f;
 
 
     IEnumerator Start()
@@ -41,17 +41,17 @@ public class Move2 : MonoBehaviour
         while (true)
         {
             anim.SetBool("walk", true);
-            yield return StartCoroutine(MoveObject(transform, pointA, pointB, 4.0f));
+            yield return StartCoroutine(MoveObject(transform, pointA, pointB, 3.0f));
             anim.SetBool("walk", false);
             yield return new WaitForSeconds(0.5f);
 
 
-            transform.localScale = new Vector3(1, 1, 1);
-            anim.SetBool("walk", true);
-            yield return StartCoroutine(MoveObject(transform, pointB, pointA, 4.0f));
-            anim.SetBool("walk", false);
-            yield return new WaitForSeconds(0.5f);
             transform.localScale = new Vector3(-1, 1, 1);
+            anim.SetBool("walk", true);
+            yield return StartCoroutine(MoveObject(transform, pointB, pointA, 3.0f));
+            anim.SetBool("walk", false);
+            yield return new WaitForSeconds(0.5f);
+            transform.localScale = new Vector3(1, 1, 1);
         }
 
     }

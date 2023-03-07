@@ -15353,7 +15353,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1000
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.78431374}
+  m_Color: {r: 0.03791384, g: 0.03791384, b: 0.11320752, a: 0.45490196}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -16416,19 +16416,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8408725019835779436, guid: b86c18356213f44f4b99e66a8eb43e10, type: 3}
       propertyPath: m_Size.x
-      value: 0.5658755
+      value: 0.48421487
       objectReference: {fileID: 0}
     - target: {fileID: 8408725019835779436, guid: b86c18356213f44f4b99e66a8eb43e10, type: 3}
       propertyPath: m_Size.y
-      value: 1.4341246
+      value: 1.3838718
       objectReference: {fileID: 0}
     - target: {fileID: 8408725019835779436, guid: b86c18356213f44f4b99e66a8eb43e10, type: 3}
       propertyPath: m_Offset.x
-      value: 0.15613249
+      value: -0.022892848
       objectReference: {fileID: 0}
     - target: {fileID: 8408725019835779436, guid: b86c18356213f44f4b99e66a8eb43e10, type: 3}
       propertyPath: m_Offset.y
-      value: 0.15613252
+      value: 0.13100612
       objectReference: {fileID: 0}
     - target: {fileID: 8408725019835779438, guid: b86c18356213f44f4b99e66a8eb43e10, type: 3}
       propertyPath: slots.Array.data[0]
@@ -16452,19 +16452,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8408725020187180034, guid: b86c18356213f44f4b99e66a8eb43e10, type: 3}
       propertyPath: m_Size.x
-      value: 0.23834932
+      value: 0.2446309
       objectReference: {fileID: 0}
     - target: {fileID: 8408725020187180034, guid: b86c18356213f44f4b99e66a8eb43e10, type: 3}
       propertyPath: m_Size.y
-      value: 0.69177276
+      value: 0.66978717
       objectReference: {fileID: 0}
     - target: {fileID: 8408725020187180034, guid: b86c18356213f44f4b99e66a8eb43e10, type: 3}
       propertyPath: m_Offset.x
-      value: 0.068462804
+      value: -0.0037754625
       objectReference: {fileID: 0}
     - target: {fileID: 8408725020187180034, guid: b86c18356213f44f4b99e66a8eb43e10, type: 3}
       propertyPath: m_Offset.y
-      value: 0.080167204
+      value: 0.06917441
       objectReference: {fileID: 0}
     - target: {fileID: 8408725020187180039, guid: b86c18356213f44f4b99e66a8eb43e10, type: 3}
       propertyPath: m_LocalScale.x

@@ -114,6 +114,10 @@ public class Robber : MonoBehaviour
             transform.position = new Vector3(0, 0, 0);
         }
 
+        if (other.CompareTag("door")) {
+                gameHandlerObj.WinGame();
+            }
+
     }
     
 }

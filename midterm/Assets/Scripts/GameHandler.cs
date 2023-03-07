@@ -8,7 +8,11 @@ public class GameHandler : MonoBehaviour {
 
       public GameObject scoreText;
 
-      public float timeLeft = 60;
+      public GameObject Door_ClosedL;
+      public GameObject Door_ClosedR;
+      public GameObject Door_OpenedL;
+
+      public float timeLeft = 120;
       public bool timerOn = false;
       public GameObject timerText;
       public Image gameOver;
@@ -65,13 +69,17 @@ public class GameHandler : MonoBehaviour {
                   if(timeLeft > 0) {
                         timeLeft -= Time.deltaTime;
                         UpdateTimer(timeLeft);
+                        if (earnings >= 230) {
+                              OpenDoor(4);
+                        }
                   } else {
                   Debug.Log("Time is up!");
                   timeLeft = 0;
                   timerOn = false;
-                  gameOver.gameObject.SetActive(true);
-                  Text sudbtractTimeTxt = scoreText.GetComponent<Text>();
-                  GameOverTxt.gameObject.SetActive(true);
+                  LoseGame();
+                  //gameOver.gameObject.SetActive(true);
+                  //Text sudbtractTimeTxt = scoreText.GetComponent<Text>();
+                  //GameOverTxt.gameObject.SetActive(true);
             }
             } 
       }
@@ -111,6 +119,21 @@ public class GameHandler : MonoBehaviour {
             SceneManager.LoadScene("Credits");
       }
 
+      public void WinGame() {
+            SceneManager.LoadScene("EndWin");
+      }
+
+      public void LoseGame() {
+            SceneManager.LoadScene("EndLose");
+      }
+
+      public void OpenDoor(int artifactCount) {
+            if (artifactCount == 4) {
+                  Door_ClosedL.gameObject.SetActive(false);
+                  Door_ClosedR.gameObject.SetActive(false);
+                  Door_OpenedL.gameObject.SetActive(true);
+            }
+      }
 
 
 

@@ -31,6 +31,7 @@ public class Pickup : MonoBehaviour
                     /* get the value of the item collected */
                     collidedItemVal = gameObject.GetComponent<Artifact>().value;
                     gameHandlerObj.AddScore(collidedItemVal);
+
                     break;
                 }
             }

@@ -77,6 +77,6 @@ public class Movement : MonoBehaviour
                 /* get the value of the item collected */
                 collidedItemVal = other.gameObject.GetComponent<Artifact>().value;
                 gameHandlerObj.AddScore(collidedItemVal);
-            }
+            } 
         }
 }

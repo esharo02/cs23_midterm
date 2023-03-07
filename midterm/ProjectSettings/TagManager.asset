@@ -8,6 +8,7 @@ TagManager:
   - GameHandler
   - artifact
   - laserbeam
+  - door
   layers:
   - Default
   - TransparentFX

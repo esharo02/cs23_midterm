@@ -22,6 +22,7 @@ public class GameHandler : MonoBehaviour {
     private Vector3 fromScale;
 
     private int earnings = 0;
+    private int numArtifacts = 0;
 
       void Start(){
             timerOn = true;
@@ -32,6 +33,7 @@ public class GameHandler : MonoBehaviour {
 
       public void AddScore(int points){
             earnings += points;
+            numArtifacts++;
             UpdateScore();
       }
 
@@ -69,7 +71,7 @@ public class GameHandler : MonoBehaviour {
                   if(timeLeft > 0) {
                         timeLeft -= Time.deltaTime;
                         UpdateTimer(timeLeft);
-                        if (earnings >= 230) {
+                        if (numArtifacts >= 4) {
                               OpenDoor(4);
                         }
                   } else {

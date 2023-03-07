@@ -30,9 +30,11 @@ public class laser_flash : MonoBehaviour
         isBlinking = true;
         renderer.enabled = false;
         this.GetComponent<Collider2D>().enabled = false;
+        this.GetComponentInChildren<SpriteMask>().enabled = false;
         yield return new WaitForSeconds(blinkDuration);
         renderer.enabled = true;
         this.GetComponent<Collider2D>().enabled = true;
+        this.GetComponentInChildren<SpriteMask>().enabled = true;
         yield return new WaitForSeconds(blinkInterval - blinkDuration);
         isBlinking = false;
     }
